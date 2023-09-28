@@ -1,0 +1,50 @@
+@import 'colors';
+
+%marginb{
+  margin-bottom: 20px;
+}
+
+#submit-container{
+  display: none;
+  max-width: 25%;
+  background-color: $crack;
+  border-radius: 20px;
+  padding: 30px 35px;
+  margin: 0 auto;
+  width: 23%;
+  margin-top: 100px;
+
+ img{
+  margin-bottom: 20px;
+  }
+  h1{
+  font-size: 30px;
+  color: $darkSlate;
+  margin-bottom: 15px;
+  }
+  p{
+  color: $charcoal;
+  font-size: 11px;
+  @extend %marginb;
+  }
+  span{
+  color: $darkSlate;
+  font-weight: 700;
+  }
+  .dismiss-btn{
+  width: 100%;
+  padding: 11px 0; 
+  font-size: 12px;
+  background-color: $darkSlate;
+  color: $crack;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 1s;
+  }
+
+  .dismiss-btn:hover{
+  background: linear-gradient(90deg, $tomato, $orange);
+  }
+
+}

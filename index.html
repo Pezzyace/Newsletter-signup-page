@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/design.css">
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(255, 45%, 44%); }
+    @media (max-width: 375px){
+      .attribution{
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <!-- Sign-up form start -->
+    <div id="form-container">
+      <div class="left">
+        <article>
+          <h1>Stay updated!</h1>
+          <p class="sub-heading">Join 60,000+ product managers receiving monthly updates on:</p>
+          <section>
+            <div class="details">
+              <img src="./assets/images/icon-list.svg">
+              <p class="detail">Product discovery and building what matters</p>
+            </div>
+            <div class="details">
+              <img src="./assets/images/icon-list.svg">
+              <p class="detail">Measuring to ensure updates are a success</p>
+            </div>
+            <div class="details">
+              <img src="./assets/images/icon-list.svg">
+              <p class="detail">And much more!</p>
+            </div>
+          </section>
+          <form>
+            <label for="email">
+              <span class="email-setup">
+                <p>Email address</p>
+                <span id="valid-email"></span>
+              </span>
+              <input type="email" class="emailx" name="email" id="email" placeholder="email@company.com" required>
+            </label>
+            <input type="button" id="submit-btn" class="submit-btn" value="Subscribe to monthly newsletter">
+          </form>
+        </article>
+        <img src="assets/images/illustration-sign-up-mobile.svg" alt="" class="bg-img">
+      </div>
+      <div class="right">
+        <img src="assets/images/illustration-sign-up-desktop.svg" class="bg-img">
+        <article>
+          <h1>Stay updated!</h1>
+          <p class="sub-heading">Join 60,000+ product managers receiving monthly updates on:</p>
+          <section>
+            <div class="details">
+              <img src="./assets/images/icon-list.svg">
+              <p class="detail">Product discovery and building what matters</p>
+            </div>
+            <div class="details">
+              <img src="./assets/images/icon-list.svg">
+              <p class="detail">Measuring to ensure updates are a success</p>
+            </div>
+            <div class="details">
+              <img src="./assets/images/icon-list.svg">
+              <p class="detail">And much more!</p>
+            </div>
+          </section>
+          <form>
+            <label for="email">
+              <span class="email-setup">
+                <p>Email address</p>
+                <span id="valid-email"></span>
+              </span>
+              <input type="email" class="emailx" name="email" id="email" placeholder="email@company.com" required>
+            </label>
+            <input type="button" id="submit-btn" class="submit-btn" value="Subscribe to monthly newsletter">
+          </form>
+        </article>
+      </div>
+    </div>
+    <!-- Sign-up form end -->
+
+    <!-- Success message start -->
+    <div id="submit-container">
+      <img src="assets/images/icon-success.svg" alt="success logo">
+      <h1>Thanks for subscribing!</h1>
+      <p>A confirmation email has been sent to <span>ash@loremcompany.com.</span> Please open it and click the button inside to confirm your subscription.</p>
+      <button class="dismiss-btn" id="dismiss-btn">Dismiss message</button>
+    </div>
+    <!-- Success message end -->
+  </main> 
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Peace Akaehomen</a>.
+  </div>
+
+  <script src="main.js">
+   
+
+  </script>
+</body>
+</html>

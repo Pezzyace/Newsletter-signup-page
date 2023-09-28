@@ -1,0 +1,19 @@
+@import 'colors';
+@import 'form-container';
+@import 'submit-container';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto' , sans-serif;
+}
+body{
+  background-color: $charcoal;
+  @include mobile{
+    background-color: $crack;
+  }
+}
+main{
+  margin-bottom: 30px;
+}
