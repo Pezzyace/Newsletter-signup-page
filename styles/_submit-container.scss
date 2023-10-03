@@ -1,50 +1,77 @@
 @import 'colors';
 
+
 %marginb{
   margin-bottom: 20px;
 }
 
 #submit-container{
   display: none;
-  max-width: 25%;
+  flex-direction: column;
   background-color: $crack;
   border-radius: 20px;
   padding: 30px 35px;
   margin: 0 auto;
   width: 23%;
-  margin-top: 100px;
+  margin-top: 150px;
+  position: relative;
+  
 
- img{
-  margin-bottom: 20px;
+  @include mobile{
+    width: 100%;
+    padding: 100px 30px;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  img{
+    margin-bottom: 20px;
+    width: 70px;
+
+    @include mobile{
+      margin-bottom: 30px;
+    }
   }
   h1{
-  font-size: 30px;
-  color: $darkSlate;
-  margin-bottom: 15px;
+    font-size: 30px;
+    color: $darkSlate;
+    margin-bottom: 15px;
   }
   p{
-  color: $charcoal;
-  font-size: 11px;
-  @extend %marginb;
+    color: $charcoal;
+    font-size: 11px;
+    @extend %marginb;
+
+    @include mobile{
+      font-size: 15px;
+    }
   }
   span{
-  color: $darkSlate;
-  font-weight: 700;
+    color: $darkSlate;
+    font-weight: 700;
   }
   .dismiss-btn{
-  width: 100%;
-  padding: 11px 0; 
-  font-size: 12px;
-  background-color: $darkSlate;
-  color: $crack;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 1s;
+    width: 100%;
+    padding: 11px 0; 
+    font-size: 12px;
+    background-color: $darkSlate;
+    color: $crack;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 1s;
+
+    @include mobile{
+      position: absolute;
+      bottom: 60px;
+      width: 80%;
+      margin: 0 auto;
+      margin-left: 20px;
+    }
   }
 
   .dismiss-btn:hover{
-  background: linear-gradient(90deg, $tomato, $orange);
+    background: linear-gradient(90deg, $tomato, $orange);
   }
-
 }

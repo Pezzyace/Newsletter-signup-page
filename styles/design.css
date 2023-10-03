@@ -1,39 +1,54 @@
-#submit-container p, #form-container .right article form label input[type=email], #form-container .right article section, #form-container .right article .sub-heading, #form-container .right article h1, #form-container .left article form label input[type=email], #form-container .left article section, #form-container .left article .sub-heading, #form-container .left article h1 {
+#submit-container p, #form-container .left article form label input[type=email], #form-container .left article section, #form-container .left article .sub-heading, #form-container .left article h1 {
   margin-bottom: 20px;
 }
 
 #form-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 50px;
   align-items: center;
   width: 55%;
   margin: 0 auto;
   background-color: hsl(0, 0%, 100%);
   margin-top: 50px;
-  padding: 15px 20px 20px 50px;
+  padding: 20px 20px 20px 50px;
   height: 500px;
   border-radius: 20px;
 }
 @media screen and (max-width: 375px) {
   #form-container {
-    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
     width: 100%;
     padding: 0;
-    margin-top: -20px;
-    gap: 0;
+    margin: 0;
+    height: 100vh;
+  }
+}
+@media screen and (max-width: 375px) {
+  #form-container .left {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
   }
 }
 #form-container .left article {
-  width: 100%;
-}
-@media screen and (max-width: 375px) {
-  #form-container .left article {
-    display: none;
-  }
+  width: 80%;
+  margin: 0 auto;
 }
 #form-container .left article h1 {
   font-size: 35px;
   color: hsl(234, 29%, 20%);
+}
+@media screen and (max-width: 375px) {
+  #form-container .left article h1 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 375px) {
+  #form-container .left article .sub-heading {
+    text-align: center;
+  }
 }
 #form-container .left article section .details {
   display: flex;
@@ -67,6 +82,7 @@
   font-size: 11px;
   color: hsl(4, 100%, 67%);
   font-weight: 700;
+  display: none;
 }
 #form-container .left article form label input[type=email] {
   padding: 10px;
@@ -78,6 +94,10 @@
 }
 #form-container .left article form label input[type=email]:focus {
   border-color: hsl(235, 18%, 26%);
+}
+#form-container .left article form label input.err {
+  border: 1px solid hsl(4, 100%, 67%);
+  background-color: hsla(4, 100%, 67%, 0.275);
 }
 #form-container .left article form input[type=button] {
   width: 100%;
@@ -93,129 +113,54 @@
 #form-container .left article form input[type=button]:hover {
   background: linear-gradient(90deg, hsl(4, 100%, 67%), hsl(29, 100%, 50%));
 }
-@media screen and (max-width: 375px) {
-  #form-container .left article {
-    width: 100%;
-    padding: 20px;
-  }
-}
-#form-container .left .bg-img {
-  display: none;
-}
-@media screen and (max-width: 375px) {
-  #form-container .left .bg-img {
-    display: flex;
-  }
+#form-container .right {
+  background: url(../assets/images/illustration-sign-up-desktop.svg) no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 @media screen and (max-width: 375px) {
   #form-container .right {
-    height: 100px;
+    background: url(../assets/images/illustration-sign-up-mobile.svg) no-repeat;
+    background-size: cover;
     width: 100%;
-  }
-}
-#form-container .right .bg-img {
-  width: 100%;
-  max-width: 350px;
-  height: 450px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 10px;
-}
-@media screen and (max-width: 375px) {
-  #form-container .right .bg-img {
-    display: none;
-  }
-}
-#form-container .right article {
-  display: none;
-  flex-direction: column;
-  width: 80%;
-  margin: 0 auto;
-}
-#form-container .right article h1 {
-  font-size: 35px;
-  color: hsl(234, 29%, 20%);
-}
-#form-container .right article section .details {
-  display: flex;
-  margin-bottom: 10px;
-}
-#form-container .right article section .details img {
-  width: 15px;
-  margin-right: 10px;
-}
-#form-container .right article .sub-heading, #form-container .right article .detail {
-  color: hsl(235, 18%, 26%);
-}
-#form-container .right article form {
-  display: block;
-}
-#form-container .right article form label {
-  display: block;
-}
-#form-container .right article form label span {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 3px;
-}
-#form-container .right article form label span p {
-  margin-bottom: 5px;
-  font-size: 11px;
-  color: hsl(234, 29%, 20%);
-  font-weight: 700;
-}
-#form-container .right article form label span span {
-  font-size: 11px;
-  color: hsl(4, 100%, 67%);
-  font-weight: 700;
-}
-#form-container .right article form label input[type=email] {
-  padding: 10px;
-  font-size: 13px;
-  width: 100%;
-  outline: none;
-  border: 1px solid hsl(231, 7%, 60%);
-  border-radius: 5px;
-}
-#form-container .right article form label input[type=email]:focus {
-  border-color: hsl(235, 18%, 26%);
-}
-#form-container .right article form input[type=button] {
-  width: 100%;
-  padding: 11px 0;
-  font-size: 12px;
-  background-color: hsl(234, 29%, 20%);
-  color: hsl(0, 0%, 100%);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 1s;
-}
-#form-container .right article form input[type=button]:hover {
-  background: linear-gradient(90deg, hsl(4, 100%, 67%), hsl(29, 100%, 50%));
-}
-@media screen and (max-width: 375px) {
-  #form-container .right article {
-    display: flex;
+    height: 40%;
+    position: absolute;
+    top: 0;
   }
 }
 
-#submit-container p, #form-container .left article h1, #form-container .left article .sub-heading, #form-container .left article section, #form-container .left article form label input[type=email], #form-container .right article h1, #form-container .right article .sub-heading, #form-container .right article section, #form-container .right article form label input[type=email] {
+#submit-container p, #form-container .left article h1, #form-container .left article .sub-heading, #form-container .left article section, #form-container .left article form label input[type=email] {
   margin-bottom: 20px;
 }
 
 #submit-container {
   display: none;
-  max-width: 25%;
+  flex-direction: column;
   background-color: hsl(0, 0%, 100%);
   border-radius: 20px;
   padding: 30px 35px;
   margin: 0 auto;
   width: 23%;
-  margin-top: 100px;
+  margin-top: 150px;
+  position: relative;
+}
+@media screen and (max-width: 375px) {
+  #submit-container {
+    width: 100%;
+    padding: 100px 30px;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+  }
 }
 #submit-container img {
   margin-bottom: 20px;
+  width: 70px;
+}
+@media screen and (max-width: 375px) {
+  #submit-container img {
+    margin-bottom: 30px;
+  }
 }
 #submit-container h1 {
   font-size: 30px;
@@ -225,6 +170,11 @@
 #submit-container p {
   color: hsl(235, 18%, 26%);
   font-size: 11px;
+}
+@media screen and (max-width: 375px) {
+  #submit-container p {
+    font-size: 15px;
+  }
 }
 #submit-container span {
   color: hsl(234, 29%, 20%);
@@ -241,6 +191,15 @@
   cursor: pointer;
   transition: background 1s;
 }
+@media screen and (max-width: 375px) {
+  #submit-container .dismiss-btn {
+    position: absolute;
+    bottom: 60px;
+    width: 80%;
+    margin: 0 auto;
+    margin-left: 20px;
+  }
+}
 #submit-container .dismiss-btn:hover {
   background: linear-gradient(90deg, hsl(4, 100%, 67%), hsl(29, 100%, 50%));
 }
@@ -250,6 +209,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  text-decoration: none;
 }
 
 body {

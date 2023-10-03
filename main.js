@@ -1,23 +1,28 @@
-const submitBtn = document.getElementById('submit-btn');
-const dismissBtn = document.getElementById('dismiss-btn');
-const formContainer = document.getElementById('form-container');
-const submitContainer = document.getElementById('submit-container');
-const re = /^([a-zA-z0-9_\-\.]+)@([a-zA-z]+)\.([a-zA-Z]{2,5})$/;
+const emailInput = document.getElementById("email");
+const submitBtn = document.getElementById("submit-btn");
+const message = document.getElementById("emailErrorMessage");
+const dismissBtn = document.getElementById("dismiss-btn");
+const formContainer = document.getElementById("form-container");
+const submitContainer = document.getElementById("submit-container");
 
-document.getElementById('submit-btn').addEventListener('click', validateEmail);
 
-function validateEmail(){
-  const email = document.getElementById('email');
+submitBtn.addEventListener('click', () => {
 
-  if(!re.test(email.value)){
-    document.getElementById('valid-email').innerHTML="Valid email required";
-  }else{
-    submitContainer.style.display = 'block';
-    formContainer.style.display = 'none';
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+  if (!emailPattern.test(emailInput.value.trim())) {
+    emailInput.classList.add("err");
+    message.style.display = "block";
   }
-}
+  else{
+    formContainer.style.display = 'none';
+    submitContainer.style.display = 'flex';
+    emailInput.classList.remove("err");
+    message.style.display = "none";
+  }
+})
 
 dismissBtn.addEventListener(('click'), () => {
-  formContainer.style.display = 'flex';
+  formContainer.style.display = 'grid';
   submitContainer.style.display = 'none';
 })
